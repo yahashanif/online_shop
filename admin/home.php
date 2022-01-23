@@ -7,11 +7,12 @@
 	?>
 	<div class="dh3">
 		<div id="boxval">
-			<p>Kategori</p>
+		
 			<h3><?php echo "$rowk"; ?></h3>
 			</div>
 			<div class="card">
-			<div class="kepalacard">Kategori Terbaru</div>
+			<div class="kepalacard"> <h2>Kategori</h2>
+			   <p>Kategori Terbaru</p></div>
 			<div class="isicard">
 		<?php
 		if($rowk == 0){
@@ -19,8 +20,8 @@
 		}else{
 			echo "<hr>";
 			while($rk = mysqli_fetch_array($sqlkl)){
-			echo "<big>$rkl[namakat]</big>
-				<br>$rkl[ketkat]
+			echo "<big>$rk[namakat]</big>
+				<br>$rk[ketkat]
 				<hr>";
 				}
 			}
@@ -37,51 +38,25 @@
 	<?php 
 	$sqlk = mysqli_query($kon, "select * from produk");
 	$rowk = mysqli_num_rows($sqlk);
-	$sqlkl = mysqli_query($kon, "select * from produk order by tglproduk desc limit 1");
+	$sqsqlpllkl = mysqli_query($kon, "select * from produk order by tglproduk desc limit 1");
+	
 	?>
 	<div class="dh3">
 		<div id="boxval">
-			<p>Produk</p>
-			<h3><?php echo "$rowp"; ?></h3>
+			
+			<h3><?php echo "$rowk"; ?></h3>
 			</div>
 			<div class="card">
-			<div class="kepalacard">Produk Terbaru</div>
+			<div class="kepalacard"> <h2>Produk</h2>
+			   <p>Produk Terbaru</p></div>
 			<div class="isicard" style="text-align:center;">
 		<?php
-		if($rowp == 0){
-			echo "<div align='center'>Belum ada produk ditambahkan</div>";
+		
+		if($rowk == 0){
+			echo "<div align='center'><h2>Belum ada produk ditambahkan</h2></div>";
 		}else{
 			echo "<hr>";
-			while($rpl = mysqli_fetch_array($sqlpl)){
-			$hrg = number_format($rpl["harga"]);
-			$nm = substr($rpl["nama"],0,30);
-			if($rpl["stok"] > 0){
-				$stok = "font color='#00CC00'>Stok Tersedia</font>";
-				}else{
-				$stok = "<font color='#FF0000'>Stok Habis</font>";
-				}
-				
-				if($rpl["diskon"] > 0){
-				$disk = ($rpl["diskon"] * $rpl["harga"]) / 100;
-				$hrgbaru = $rpl["harga"] - $disk;
-				$hrgbr = $number_format($hrgbaru);
-				$diskon = "<font color='#FF0000'> -$rpl[diskon]% </font>";
-				$hrglama = "<font style='text-decoration:line-through'><small>IDR $hrg</small></font>";
-				$hrgbr = "";
-				$diskon = "";
-				$hrglama = "<b>$hrg</b>";
-				}
-		echo "<br>";
-		echo "<img src='../fotoproduk/$rpl[foto1]' height='60px'> ";
-		echo "<img src='../fotoproduk/$rpl[foto2]' height='60px'>";
-		echo "<hr>";
-		echo "<b>$nm...</b>";
-		echo "<hr>";
-		echo "<b>IDR $hrgbr</b> $diskon $hrglama";
-		echo "<hr>";
-		echo "<b>$stok</b>";
-		echo "<hr>";
-			}
+			echo "<h2>Data Produk</h2>";
 		}
 			?>
 		</div>
@@ -100,27 +75,31 @@
 	?>
 	<div class="dh3">
 		<div id="boxval">
-			<p>Anggota</p>
-			<h3><?php echo "$rowag"; ?></h3>
+		
+			<h3><?php echo "$rowk"; ?></h3>
 			</div>
 			<div class="card">
-			<div class="kepalacard">Anggota Terbaru</div>
+			 
+			<div class="kepalacard"> 
+  			 <h2>Anggota</h2>
+			   <p>Anggota Terbaru</p>
+  </div>
 			<div class="isicard">
 		<?php
-		if($rowag == 0){
+		if($rowk == 0){
 			echo "<hr>";
 			echo "<div align='center'>Belum ada anggota yang terdaftar</div>";
 			echo "<hr>";
 			}else{
-			while($rag = mysqli_fetch_array($sqlagl)){
+			while($rag = mysqli_fetch_array($sqlkl)){
 			echo "<br>";
-			echo "<img src='../foto/$ragl[foto]' height='64px' style='border-radius:50%'>";
+			echo "<img src='../foto/$rag[foto]'  width='100' height='100' style='border-radius:50%'>";
 			echo "<hr>";
-			echo "<b>$ragl[nama]</b>";
+			echo "<b>$rag[nama]</b>";
 			echo "<hr>";
-			echo "$ragl[email]";
+			echo "$rag[email]";
 			echo "<hr>";
-			echo "$ragl[nohp]";
+			echo "$rag[nohp]";
 			echo "<hr>"; 
 				}
 			}
@@ -140,11 +119,15 @@
 	?>
 	<div class="dh3">
 		<div id="boxval">
-			<p>Anggota</p>
-			<h3><?php echo "$rowag"; ?></h3>
+			
+			<h3><?php echo "$rowk"; ?></h3>
 			</div>
 			<div class="card">
-			<div class="kepalacard">Transaksi Terbaru</div>
+			
+			<div class="kepalacard"> 
+			<h2>Transaksi</h2>
+			<p>Transaksi Terbaru</p>
+	</div>
 			<div class="isicard">
 			<hr>
 			Status Order<br>

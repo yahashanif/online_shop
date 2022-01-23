@@ -135,7 +135,7 @@ input [type="submit"]{
 }
 
 .sidenav a:hover{
-    color#87C2C2;
+    color:#87C2C2;
 }
 
 .sidenav h3{
@@ -228,7 +228,7 @@ input [type="submit"]{
 #boxval p{
     float:left;
     color:#FFFFFF;
-    font-size:22px;
+    font-size:15px;
     margin:35px;
     margin-left:30px;
     font-family:Century Gothic;
