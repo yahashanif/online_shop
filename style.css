@@ -1,0 +1,397 @@
+/* CSS Document */
+
+body{
+    font-family:Cambria;
+    padding:0px;
+    margin:0px;
+    color:#66001a;
+   }
+   
+.container1{
+	height:12px;
+	padding:10px;
+	color:#66001a;
+	font-size:12px;
+	}
+
+.container2{
+	height:50px;
+	background-color:#66001a;
+	color:#FFFFFF;
+	font-size:24px;
+	}
+	
+.container3{
+	height:65px;
+	background-color:#66001a;
+	color:#FFFFFF;
+	font-size:24px;
+	text-align:center;
+	}
+	
+.container3 input [type="text"]{
+	width:80%;
+	font-family:Cambria;
+	font-size:14px;
+	color:#66001a;
+	padding:0.9em;
+	border:solid 1px #400080;
+	border-radius:5px;
+	text-align:center;
+	}
+	
+.container3 input[type="submit"]{
+	width:auto;
+	font-family:Cambria;
+	font-size:14px;
+	background-color:#FF8000;
+	color:#FFFFFF;
+	cursor:pointer;
+	padding:0.8em;
+	border:solid 1px #FF8000;
+	border-radius:5px;
+	}
+	
+.container4{
+	height:auto;
+	background-color:#66001a;
+	padding:10px;
+	}
+	
+.container5{
+	margin-top:30px;
+	height:auto;
+	padding:10px;
+	color:#66001a;
+	font-size:14px;
+	}
+	
+.container5 h2{
+	font-family:Centuri Gothic;
+	text-decoration:underline;
+	font-size:30px;
+	font-weight:normal;
+	}
+	
+.container6{
+	background-color:#66001a;
+	height:20px;
+	width:100%;
+	color:#FFFFFF;
+	font-family:Cambria;
+	font-size:14px;
+	padding-top:10px;
+	padding-bottom:10px;
+	text-align:center;
+	margin-bottom:10px;
+	}
+	
+#signin{
+    max-width:350px;
+    margin:150px auto;
+    position:relativ;
+    display:block;
+    background-color:#FFFFFF;
+    box-shadow:0 0 5px #66001a;
+    text-align:center;
+}
+
+#signin img{
+    margin:-60px;
+    margin-left:-50px;
+    border-radius:50%;
+}
+
+#signin h3{
+    text-align:center;
+    color:#66001a;
+    font-size:24px;
+    padding-top:60px;
+}
+
+#signin p{
+    text-align:center;
+    color:#66001a;
+    font-size:14px;
+}
+
+fieldset{
+    margin:10px;
+    border:none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="date"],
+select,
+textarea{
+    width:90%;
+    padding:0.8em;
+    margin-top:1em;
+    border:1px solid #66001a;
+    background-color:#FFFFFF;
+    font-family:Cambria;
+    font-size:14px;
+    color:#66001a;
+    text-align:center;
+    border-radius:5px;
+}
+
+input [type="submit"]{
+    width:auto;
+    margin-top:0.9em;
+	color:#FFFFFF;
+    background-color:#66001a;
+    padding:0.8em;
+    cursor:pointer;
+    border:1px solid #66001a;
+    font-family:Cambria;
+    border-radius:5px;
+    }
+
+.grid{
+    width:100%;
+    padding-top:0px;
+    padding-bottom:0px;
+    overflow:hidden;
+}
+
+.dh1 {width:8.33%; }
+.dh2 {width:16.66%; }
+.dh3 {width:24.99%; }
+.dh4 {width:33.33%; }
+.dh5 {width:41.66%; }
+.dh6 {width:49.99%; }
+.dh7 {width:58.33%; }
+.dh8 {width:66.66%; }
+.dh9 {width:74.99%; }
+.dh10 {width:83.33%; }
+.dh11 {width:91.66%; }
+.dh12 {width:99.99%; }
+
+.dh1, .dh2, .dh3, .dh4, .dh5, .dh6, .dh7, .dh8, .dh9, .dh10, .dh11, .dh12{
+    float:left;
+    display:inline;
+    margin:0 0%;
+}
+
+@media screen and (max-width:720px) {
+  .dh1, .dh2, .dh3, .dh4, .dh5, .dh6, .dh7, .dh8, .dh9, .dh10, .dh11, .dh12{
+    width:100%;
+    margin-bottom:-lem;
+    }
+}
+
+/*Bagian Menu*/
+.topnav{
+	overflow:hidden;
+	background-color:#66001a;
+	}
+	
+.topnav a{
+	float:left;
+	display:block;
+	color:#FFFFFF;
+	padding:14px 16px;
+	text-decoration:none;
+	font-size:14px;
+	}
+	
+.topnav a:hover{
+	background-color:#FFFFFF;
+	color:#66001a;
+	}
+	
+.topnav a.pilih,
+.topnav a.pilih:hover{
+	color:#66001a;
+	font-family:Cambria;
+	}
+	
+.topnav icon{
+	display:none;
+	}
+	
+@media screen and (max-width:720px){
+	.topnav a.not(:first-child) {display:none;}
+	.topnav a.icon{
+	float:right;
+	display:block;
+	width:auto;
+	}
+
+
+@media screen and (max-width:720px){
+	.topnav.responsive {position:relative;}
+	.topnav.responsive .icon{
+	position:absolute;
+	right:0;
+	top:0;
+	}
+	.topnav.responsive a{
+		float:none;
+		display:block;
+		text-align:left;
+		}
+	}
+
+
+/*link*/
+a{ color:#66001a; text-decoration:none; }
+a:hover{ color:#87C2C2; }
+
+
+/*Tombol*/
+.btn{
+    padding:9px 9px;
+    text-align:center;
+    border:1px solid transparent;
+    border-radius:4px;
+    font-family:Cambria;
+    font-size:14px;
+    margin-top:10px;
+    width:auto;
+}
+
+.btn-add{
+    color:#FFFFFF;
+    background-color:#66001a;
+	cursor:pointer;
+}
+
+.btn-dis{
+    color:#FFFFFF;
+    background-color:#4E9A9A;
+}
+
+.btn-add:hover{
+    color:#FFFFFF;
+    background-color:#4E9A9A;
+}
+
+.btn-x{
+	padding:2px 2px;
+	text-align:center;
+	border:1px solid transparent;
+	border-radius:3px;
+	font-family:Cambria;
+	font-size:18px;
+	font-weight:bold;
+	margin-left:20px;
+	position:relative;
+	width:30px;
+	color:#66001a;
+	background-color:#FFFFFF;
+	cursor:pointer;
+	}
+	
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        background-color: #2196F3;
+        padding: 10px;
+      }
+      
+
+/*Card*/
+.card{
+    margin:17px;
+    min-height:230px;
+    border:thin;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.2);
+    padding-bottom:10px;
+}
+
+.kepalacard{
+    padding:10px;
+    background-color:#66001a;
+    color:#FFFFFF;
+    font-family:Century Gothic;
+    family-size:20px;
+	text-align:right;
+}
+
+.isicard{
+    padding-left:10px;
+    padding-right:10px;
+    background-color:#FFFFFF;
+    color:#66001a;
+    min-height:185px;
+    font-size:14px;
+}
+
+.isicard select{
+    width:100px;
+    padding:0.8em;
+    margin-top:1em;
+    border:1px solid #66001a;
+    Background-color:#FFFFFF;
+    font-family:Cambria;
+    font-size:14px;
+    color:#66001a;
+    text-align:center;
+    border-radius:5px;
+}
+
+.isicard hr,
+.isicard img{
+    border:1px solid rgba(0,0,0,0.2);
+}
+
+.isicard .badge{
+    width:35px;
+    height:23px;
+    border-radius:7px;
+    float:right;
+    background-color:#66001a;
+    color:#FFFFFF;
+    text-align:center;
+    font-weight:bold;
+    font-size:17px;
+}
+
+.isicard big{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.isicard .jmlbeli input[type="text"]{
+	width:40px;
+	font-size:18px;
+	font-weight:bold;
+	color:#66001a;
+	padding:0.5em;
+	border:solid 1px #66001a;
+	border-radius:5px;
+	text-align:center;
+}
+
+.kakicard{
+    padding-left:10px;
+    padding-right:10px;
+    background-color:#FFFFFF;
+    color:#66001a;
+    text-align:right;
+    min-height:50px;
+}
+
+.kotak{
+    border:1px solid #66001a;
+    color:#66001a;
+    padding:4px 10px 5px;
+    font-size:14px;
+    margin:0 0px 0 0;
+    font-weight:bold;
+}
+
+.kotak:hover{
+    background-color:#66001a;
+    border:1px solid #66001a;
+    color:#FFFFFF;
+    padding:4px 10px 5px;
+    font-size:14px;
+    margin:0 0px 0 0;
+    font-weight:bold; 
+}
