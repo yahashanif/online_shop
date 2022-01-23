@@ -23,11 +23,12 @@ $rp = mysqli_fetch_array($sqlp);
  <input name="diskon" type="text" id="diskon" placeholder="Diskon Produk(dalam %)" value="<?php echo "$rp[diskon]"; ?>">
  <input name="berat" type="text" id="berat" placeholder="Berat Produk (dalam Kg)" value="<?php echo "$rp[berat]"; ?>">
  <textarea name="isikotak" id="isikotak" placeholder="Isi dalam kotak Produk"><?php echo "$rp[isikotak]"; ?></textarea>
- <p><img src="<?php echo "../fotoproduk/$rp[foto2]"; ?>" height="200px">
+ <p><img src="<?php echo "../fotoproduk/$rp[foto1]"; ?>" height="200px">
  <input name="foto1" type="file" id="foto1" >
 
  <p><img src="<?php echo "../fotoproduk/$rp[foto2]"; ?>" height="200px">
  <input name="foto2" type="file" id="foto2" >
+ <br><br>
  <input name="simpan" type="submit" id="simpan" value="SIMPAN PRODUK">
  </form>
 
@@ -50,13 +51,13 @@ if($_POST["simpan"]){
 		$nmfoto1 = $_FILES["foto1"]["name"];
 	$lokfoto1 = $_FILES["foto1"]["tmp_name"];
 	if(!empty($lokfoto1)){
-		move_uploaded_file($file_tmp, "fotoproduk/$gambar");
+		move_uploaded_file($file_tmp, "../fotoproduk/$gambar");
 		}
 		
 	$nmfoto2 = $_FILES["foto2"]["name"];
 	$lokfoto2 = $_FILES["foto2"]["tmp_name"];
 	if(!empty($lokfoto2)){
-		move_uploaded_file($lokfoto2, "fotoproduk/$nmfoto2");
+		move_uploaded_file($lokfoto2, "../fotoproduk/$nmfoto2");
 		}
 		
 		$spek    = nl2br($_POST["spesifikasi"]);

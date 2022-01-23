@@ -33,7 +33,7 @@ echo "<h2>$kat</h2>";
 	
 $sqlp = mysqli_query($kon, "select * from produk $q order by tglproduk desc $l");
 while($rp = mysqli_fetch_array($sqlp)){
-	$sqlk = mysqli_query($kon, "select * from kategori where idkat='$rp[idkat]'");
+	$sqlk = mysqli_query($kon, "select * from kategori where idcat='$rp[idkat]'");
 	$rk = mysqli_fetch_array($sqlk);
 	$hrg = number_format($rp["harga"]);
 	$nm = substr($rp["nama"], 0, 25);
@@ -71,8 +71,8 @@ while($rp = mysqli_fetch_array($sqlp)){
 			  <small><i>Dibuat pada $rp[tglproduk] WIB</i></small>";
 		echo "</div>";
 		echo "<div class='kakicard'>";
-		echo "<br><a href='?=produkdetail$idp=$rp[idproduk]'><button type='button' class='btn btn-add'>Lihat Detail</button></a>
-				<a href='?p=keranjang$idp=$rp[idproduk]&idag=$rag[idanggota]'><button type='button' class='btn btn-add'>Beli Sekarang</button></a>";
+		echo "<br><a href='?=produkdetail&$idp=$rp[idproduk]'><button type='button' class='btn btn-add'>Lihat Detail</button></a>
+				<a href='?p=keranjang&idp=$rp[idproduk]'><button type='button' class='btn btn-add'>Beli Sekarang</button></a>";
 				
 		echo "</div>";
 		echo "</div><br>";

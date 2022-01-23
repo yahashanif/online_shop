@@ -12,7 +12,7 @@ if(empty($halaman)){
 }
 $sqlp = mysqli_query($kon, "select * from produk order by tglproduk desc limit $posisi, $batas");
 while($rp = mysqli_fetch_array($sqlp)){
-	$sqlk = mysqli_query($kon, "select * from kategori where idkat='$rp[idkat]'");
+	$sqlk = mysqli_query($kon, "select * from kategori where idcat='$rp[idkat]'");
 	$rk = mysqli_fetch_array($sqlk);
 	$hrg = number_format($rp["harga"]);
 	$nm = substr($rp["nama"], 0, 25);
@@ -52,7 +52,7 @@ while($rp = mysqli_fetch_array($sqlp)){
 			  <br>oleh $ra[namalengkap]</i></small>";
 		echo "</div>";
 		echo "<div class='kakicard'>";
-		echo "<br><a href='?produkdetail$id=$rp[idproduk]'><button type='button' class='btn btn-add'>Detail</button></a>
+		echo "<br><a href='?p=produkdetail&produkdetail$id=$rp[idproduk]'><button type='button' class='btn btn-add'>Detail</button></a>
 				<a href='?p=produkedit&produkedit=$rp[idproduk]'><button type='button' class='btn btn-add'>Ubah Produk</button></a>
 				<a href='?p=produkdel&produkdel$id=$rp[idproduk]'><button type='button' class='btn btn-add'>Hapus Produk</button></a>";
 		echo "</div>";

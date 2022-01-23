@@ -2,9 +2,9 @@
 <a href="<?php echo ""; ?>"><button type="button" class="btn btn-add">Produk Detail</button></a>
 <br>
 <?php
-$sqlp = mysqli_query($kon, "select * from produk where idproduk='$_GET[id]'");
+$sqlp = mysqli_query($kon, "select * from produk where idproduk='$_GET[produkdetail]'");
 $rp = mysqli_fetch_array($sqlp);
-	$sqlk = mysqli_query($kon, "select * from kategori where idkat='$rp[idkat]'");
+	$sqlk = mysqli_query($kon, "select * from kategori where idcat='$rp[idkat]'");
 	$rk = mysqli_fetch_array($sqlk);
 	$hrg = number_format($rp["harga"]);
 	if($rp["stok"] > 0){
@@ -14,7 +14,7 @@ $rp = mysqli_fetch_array($sqlp);
 	}
 	
 	if($rp["diskon"] >0){
-	$disk = ($rp["diskon"] * ["harga"]) / 100;
+	$disk = ($rp["diskon"] * $rp["harga"]) / 100;
 	$hrgbaru = $rp["harga"] - $disk;
 	$hrgbr = number_format($hrgbaru);
 	$diskon = "<font color='FF0000> -$rp[diskon]%</font>";
@@ -51,8 +51,8 @@ $rp = mysqli_fetch_array($sqlp);
 		  <br>oleh $ra[namalengkap]</i></small>";
 	echo "</div>";
 	echo "<div class='kakicard'>";
-	echo "<br><a href='?p=produkedit&id=$rp[idproduk]'><button type='button' class='btn btn-add'>Ubah Produk</button></a>
-	<a href='?p=produkdel&id=$rp[idproduk]'><button type='button' class='btn btn-add'>Hapus Produk</button></a>";
+	echo "<br><a href='?p=produkedit&produkedit=$rp[idproduk]'><button type='button' class='btn btn-add'>Ubah Produk</button></a>
+	<a href='?p=produkdel&produkdel=$rp[idproduk]'><button type='button' class='btn btn-add'>Hapus Produk</button></a>";
 	echo "</div>";
 	echo "</div><br>";
 	echo "<div>";

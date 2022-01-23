@@ -25,6 +25,8 @@
 	  <textarea name="isikotak" id="isikotak" placeholder="Isi Dalam Kotak Produk"></textarea>
 	  <input name="foto1" type="file" id="foto1">
 	  <input name="foto2" type="file" id="foto2">
+	  <br>
+	  <br>
       <input name="simpan" type="submit" id="simpan" value="SIMPAN PRODUK">
 </form>
 

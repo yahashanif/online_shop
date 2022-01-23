@@ -71,7 +71,7 @@
 	<?php 
 	$sqlk = mysqli_query($kon, "select * from anggota");
 	$rowk = mysqli_num_rows($sqlk);
-	$sqlkl = mysqli_query($kon, "select * from anggota order by tgldaftar desc limit 2");
+	$sqlkl = mysqli_query($kon, "select * from anggota order by tgldaftar desc limit 1");
 	?>
 	<div class="dh3">
 		<div id="boxval">
@@ -114,8 +114,8 @@
 		<!-- Untuk Transaksi -->
 	<?php 
 	$sqlk = mysqli_query($kon, "select * from orders");
-	$rowk = mysqli_num_rows($sqlo);
-	$sqlkl = mysqli_query($kon, "select * from orders where statusorder='Baru' order by tglorder desc limit 2");
+	$rowk = mysqli_num_rows($sqlk);
+	$sqlorder = mysqli_query($kon, "select * from orders where statusorder='Baru' order by tglorder desc limit 2");
 	?>
 	<div class="dh3">
 		<div id="boxval">
@@ -136,13 +136,13 @@
 			<a href="<?php echo "?p=order&st=Dikirim"; ?>"><button type="button" class="btn btn-add">Dikirim</button></a>
 			<a href="<?php echo "?p=order&st=Diterim"; ?>"><button type="button" class="btn btn-add">Diterima</button></a>
 		<?php
-		if($rowo == 0){
+		if($rowk == 0){
 			echo "<hr>";
 			echo "<div align='center'>Belum ada Transaksi yang masuk</div>";
 			echo "<hr>";
 			}else{
 			echo "<hr>";
-			while($rol = mysqli_fetch_array($sqlol)){
+			while($rol = mysqli_fetch_array($sqlorder)){
 			echo "<big>#$rol[noorder] - $rol[statusorder]</big>";
 			echo "<br><small><i>pada $rol[tglorder] WIB</i></small>";
 			echo "<hr>";
@@ -156,5 +156,6 @@
 		</div>
 		<br>
 	</div>
+	
 	
 </div>

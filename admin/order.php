@@ -23,26 +23,15 @@ if($_GET["st"] == "semua"){
 	$status = "where statusorder='$_GET[st]'";
 }
 
-$sqlo = mysqli_query($kon, "select * from order $status order by tglorder desc");
+
+$sqlo = mysqli_query($kon, "select * from orders $status order by tglorder desc");
 $no = 1;
 while($ro=mysqli_fetch_array($sqlo)){
-	if($ro["statusorder"] == "Baru"){
-	$pilb = " selected"; $pill = ""; $pilk = ""; $pilt = "";
-	}
-	if($ro["statusorder"] == "Lunas"){
-	$pilb = " selected"; $pill = ""; $pilk = ""; $pilt = "";
-	}
-	if($ro["statusorder"] == "Dikirim"){
-	$pilb = " selected"; $pill = ""; $pilk = ""; $pilt = "";
-	}
-	if($ro["statusorder"] == "Diterima"){
-	$pilb = " selected"; $pill = ""; $pilk = ""; $pilt = "";
-	}
-	
+
 	$sqlod = mysqli_query($kon, "select * from orders where idorder='$ro[idorder]'");
 	$rod = mysqli_fetch_array($sqlod);
 	$sqlag = mysqli_query($kon, "select * from anggota where idanggota='$rod[idanggota]'");
-	$rag = mysqli_fetch_array(sqlag);
+	$rag = mysqli_fetch_array($sqlag);
 	
 	echo "<div class='dh12'>";
 	echo "<div class='card'>";
@@ -51,13 +40,18 @@ while($ro=mysqli_fetch_array($sqlo)){
 	echo "</div>";
 	echo "<div class='isicard'>";
 	echo "<br>Dipesan Oleh : <b>$rag[nama]</b><br>";
+	echo "<br>";
 	echo "Handphone &nbsp; &nbsp; <b>$rag[nohp]</b><br>";
+	echo "<br>";
 	echo "Alamat Email : <b>$rag[email]</b><br>";
+	echo "<br>";
 	echo "Dipesan Pada : <b>$ro[tglorder] WIB</b><br>";
-	echo "Dikirim ke : <br><b>$ro[alamatkirim]</b><br>";
+	echo "<br>";
+	echo "Dikirim ke : <b>$ro[alamatkirim]</b><br>";
+	echo "<br>";
 	
 	echo "<tabel order='0' cellpadding='3px'>";
-	$sqlordt = mysqli_query($kon, "select * from produk where idorder='$ro[idorder]'");
+	$sqlordt = mysqli_query($kon, "select * from orderdetail where idorder='$ro[idorder]'");
 	while($rordt = mysqli_fetch_array($sqlordt)){
 	$sqlpr = mysqli_query($kon, "select * from produk where idproduk='$rordt[idproduk]'");
 	$rpr = mysqli_fetch_array($sqlpr);
@@ -80,7 +74,8 @@ while($ro=mysqli_fetch_array($sqlo)){
 	}
 	
 	echo "<tr valign='top'>
-	<td width='50px'><img src='../fotoproduk/$rpr[foto1]' height='50px'></td>					
+	<td width='50px'><img src='../fotoproduk/$rpr[foto1]' height='50px'></td>		
+	<br>			
 	<td><b>$rpr[nama]</b>
 	<br>$rordt[jumlahbeli] * IDR $hrgbr
 	<br>$brt Kg * $rj[tarif] (<b>$rj[nama]</b>)</td>
@@ -88,7 +83,7 @@ while($ro=mysqli_fetch_array($sqlo)){
 	}
 	echo "</table>";
 	
-	$sqlbyr = mysqli_query($kon, "select * from pambayaran where idorder='$ro[idorder]'");
+	$sqlbyr = mysqli_query($kon, "select * from pembayaran where idorder='$ro[idorder]'");
 	$rbyr = mysqli_fetch_array($sqlbyr);
 	$rowbyr = mysqli_num_rows($sqlbyr);
 	$jmltrs = number_format($rbyr["jumlahtransfer"]);
@@ -109,12 +104,19 @@ while($ro=mysqli_fetch_array($sqlo)){
 	echo "<form method='post' action='?p=orderstatus' enctype='multipart/form-data'>";
 	echo "<input type='hidden' name='idorder' value='$ro[idorder]'>";
 	echo "<input type='hidden' name='st' value='$_GET[st]'>";
-	echo "<select name='statusorder'>";
-	echo "option value='Baru' $pilb>Baru</option>";
-	echo "option value='Lunas' $pilb>Lunas</option>";
-	echo "option value='Dikirim' $pilb>Dikirim</option>"; 
-	echo "option value='Diterima' $pilb>Diterima</option>";
-	echo "</select>";
+	echo "<br>";
+	
+	?>
+
+	<select name='statusorder'>";
+	<option value='Baru' <?php if($ro["statusorder"] == "Baru"){ echo "Selected";} ?>>Baru</option>
+	<option value='Lunas' <?php if($ro["statusorder"] == "Lunas"){ echo "Selected";} ?>>Lunas</option>
+	<option value='Dikirim' <?php if($ro["statusorder"] == "Dikirim"){ echo "Selected";} ?>>Dikirim</option>
+	<option value='Diterima' <?php if($ro["statusorder"] == "Diterima"){ echo "Selected";} ?>>Diterima</option>
+	</select>
+	<?php
+	echo "<br>";
+	echo "<br>";
 	echo "<input type='submit' value='Ubah Status Pesanan'>";
 	echo "</form><br>";
 	$total = number_format($ro["total"]);

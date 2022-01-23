@@ -58,6 +58,8 @@ if($_GET["p"] == "produkterbaru"){
 	include "login.php";
 }else if($_GET["p"] == "logout"){
 	include "logout.php";
+}else if($_GET['p'] == "riwayat"){
+	include "riwayat.php";
 }else{
 	include "home.php";
 	include "produkterbaru.php";

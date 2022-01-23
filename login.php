@@ -25,6 +25,7 @@ email='$_POST[email]' and password='$_POST[password]'");
 	echo $ra;
 	if($ra){
 	session_start();
+	$_SESSION['idanggota'] = $ra['idanggota'];
 	$_SESSION["userag"] = $ra["nama"];
 	$_SESSION["email"] = $ra["email"];
 	$_SESSION["passag"] = $ra["password"];
