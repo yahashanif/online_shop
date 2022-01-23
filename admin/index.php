@@ -41,7 +41,7 @@ onclick="openNav()">&#9776;</span>
 	<hr><a href="<?php echo "?p=home"; ?>">Beranda</a>
 	<hr><a href="<?php echo "?p=kategori"; ?>">Kategori</a>
 	<hr><a href="<?php echo "?p=produk"; ?>">Produk</a>
-	<hr><a href="<?php echo "?p=jasa kirim"; ?>">Jasa Kirim</a>
+	<hr><a href="<?php echo "?p=jasakirim"; ?>">Jasa Kirim</a>
 	<hr><a href="<?php echo "?p=anggota"; ?>">Anggota</a>
 	<hr><a href="<?php echo "?p=order&st=semua"; ?>">Transaksi</a>
 	<hr><a href="<?php echo "?p=logout"; ?>">Logout</a>
@@ -80,7 +80,7 @@ function closeNav(){
 			include "produkdel.php";
 		}else if($_GET["p"] == "produkdetail"){
 			include "produkdetail.php";
-		}else if($_GET["p"] == "jasa kirim"){
+		}else if($_GET["p"] == "jasakirim"){
 			include "jasakirim.php";
 		}else if($_GET["p"] == "jasakirimadd"){
 			include "jasakirimadd.php";

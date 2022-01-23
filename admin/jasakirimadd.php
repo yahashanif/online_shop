@@ -14,11 +14,18 @@
 <?php 
 if($_POST["simpan"]){
 	if(!empty($_POST["nama"]) and !empty($_POST["tarif"]) and !empty($_POST["detail"])){
-	$nmlogo  = $_FILES["logo"]["name"];
-	$lokfoto = $_FILES["logo"]["tmp_name"];
-	if(!empty($loklogo)){
-		move_uploaded_file($loklogo, "../logojasa/$nmlogo");
-		}
+		$ekstensi_diperbolehkan	= array('png','jpg');
+		$gambar = $_FILES['logo']['name'];
+		$x = explode('.', $gambar);
+		$ekstensi = strtolower(end($x));
+		$file_tmp = $_FILES['logo']['tmp_name'];
+
+		
+		if(!empty($lokfoto1)){
+			move_uploaded_file($file_tmp, "../logojasa/$gambar");
+			}
+
+
 		
 		$detail = nl2br($_POST["detail"]);
 		
@@ -29,9 +36,9 @@ if($_POST["simpan"]){
 		}else{
 			echo "Gagal Menyimpan";
 		}
-		echo "<META HTTP-EQUIV='Refresh Content='1; URL=?p=jasakirim'>";
-		}else{
+	}else{
 		echo "Data harus diisi dengan lengkap!!!";
 	}
+	echo "<META HTTP-EQUIV='Refresh' Content='1; URL=?p=jasakirim'>";
 }
 ?>
