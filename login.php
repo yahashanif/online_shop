@@ -22,7 +22,6 @@ $sqlag = mysqli_query($kon, "select * from anggota where
 email='$_POST[email]' and password='$_POST[password]'");
 	$ra = mysqli_fetch_array($sqlag);
 	$row = mysqli_num_rows($sqlag);
-	echo $ra;
 	if($ra){
 	session_start();
 	$_SESSION['idanggota'] = $ra['idanggota'];

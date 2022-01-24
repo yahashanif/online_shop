@@ -3,9 +3,9 @@
     <div class="isicard" style="text-align:center">
 <form action="" method="get" enctype="multipart/form-data">
     <div class="dh12">
-        <input type="hidden" name="p" value="<?=$_GET['p']?>">
-        <input type="hidden" name="idag" value="<?=$_GET['idag']?>">
-        <input type="text" name="noorder" id="" placeholder="Masukan No Order (Tanpa #)" value="<?=$_GET['noorder']?>">
+        <input type="hidden" name="p" value="<?php echo $_GET['p'];?>">
+        <input type="hidden" name="idag" value="<?php echo $_GET['idag'];?>">
+        <input type="text" name="noorder" id="" placeholder="Masukan No Order (Tanpa #)" value="<?php echo $_GET['noorder'];?>">
         <br>
         <input type="submit" value="Cari No Order">
 
@@ -19,7 +19,7 @@ $ro = mysqli_fetch_array($sqlo);
 $sqlbyr = mysqli_query($kon,"select * from pembayaran where idorder='$rop[idorder]'");
 $rbyr = mysqli_fetch_array($sqlbyr);
 $rowbyr = mysqli_num_rows($sqlbyr);
-$sqlag = mysqli_query($kon,"select * from anggota where idanggota='$_SESSION[idanggota]'");
+$sqlag = mysqli_query($kon,"select * from anggota where idanggota='$ro[idanggota]'");
 $rag = mysqli_fetch_array($sqlag);
 $total = number_format($ro['total']);
 $jmltrs = number_format($rbyr['jumlahtranfer']);
@@ -27,19 +27,19 @@ $jmltrs = number_format($rbyr['jumlahtranfer']);
 ?>
 
 <form action="" name="form2" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="idorder" value="<?=$ro['idorder']?>">
-    <input type="text" name="tglorder" value="Tanggal Order : <?=$ro['tglorder']?> WIB">
-    <input type="text" name="nama" value="Atas Nama : <?=$rag['nama']?>">
-    <input type="text" name="total" value="Sebesar : IDR <?=$total?>">
+    <input type="hidden" name="idorder" value="<?php echo $ro['idorder'];?>">
+    <input type="text" name="tglorder" value="Tanggal Order : <?php echo $ro['tglorder'];?> WIB">
+    <input type="text" name="nama" value="Atas Nama : <?php echo $rag['nama'];?>">
+    <input type="text" name="total" value="Sebesar : IDR <?php echo $total;?>">
     <p>
         <h2>Dari Rekening</h2>
-        <input type="text" name="namabankpengirim" placeholder="Nama Bank Pengirim" value="<?=$rbyr['namabankpengirim']?>">
-        <input type="text" name="namapengirim" placeholder="Nama Pengirim" value="<?=$rbyr['namapengirim']?>">
-        <input type="text" name="jumlahtranfer" placeholder="Jumlah Tranfer" value="<?=$jmltrs?>">
-        <input type="date" name="tgltranfer" placeholder="Tanggal Tranfer ex : 0000-00-00" value="<?=$rbyr['tgltranfer']?>">
+        <input type="text" name="namabankpengirim" placeholder="Nama Bank Pengirim" value="<?php echo $rbyr['namabankpengirim'];?>">
+        <input type="text" name="namapengirim" placeholder="Nama Pengirim" value="<?php echo $rbyr['namapengirim'];?>">
+        <input type="text" name="jumlahtranfer" placeholder="Jumlah Tranfer" value="<?php echo $jmltrs;?>">
+        <input type="date" name="tgltranfer" placeholder="Tanggal Tranfer ex : 0000-00-00" value="<?php echo $rbyr['tgltranfer'];?>">
         <p>
             <h2>Ke Rekening</h2>
-            <input type="text" name="bankpenerima" placeholder="Nama Bank Penerima" value="<?=$rbyr['namabankpenerima']?>">
+            <input type="text" name="bankpenerima" placeholder="Nama Bank Penerima" value="<?php echo $rbyr['namabankpenerima'];?>">
             <h2>Bukti Transfer</h2>
             <?php
             if($rowbyr > 0){
