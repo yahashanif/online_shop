@@ -91,7 +91,7 @@ while($ro=mysqli_fetch_array($sqlo)){
 	if($rowbyr > 0){
 	echo "<table width='100%' border='0'>";
 	echo "<tr>";
-	echo "<td width='100px'><a href='../buktibayar/$rbyr[bukti]' target='_blank'><img src='../buktibayar/$rbyr[bukti]' width='100px></a></td>";
+	echo "<td width='100px'><a href='../buktibayar/$rbyr[bukti]' target='_blank'><img src='../buktibayar/$rbyr[bukti]' width='100px'> </a></td>";
 	echo "<td>Ditransfer Oleh : <br><b><br>$rbyr[namapengirim]</b><br>
 	dari <b>$rbyr[namabankpengirim]</b><br>
 	ke <b>$rbyr[namabankpenerima]</b><br>
@@ -106,8 +106,7 @@ while($ro=mysqli_fetch_array($sqlo)){
 	echo "<input type='hidden' name='st' value='$_GET[st]'>";
 	echo "<br>";
 	
-	?>
-<br><br>
+?>
 <select name='statusorder'>";
 	<option value='Baru' <?php if($ro["statusorder"] == "Baru"){ echo "Selected";} ?>>Baru</option>
 	<option value='Lunas' <?php if($ro["statusorder"] == "Lunas"){ echo "Selected";} ?>>Lunas</option>

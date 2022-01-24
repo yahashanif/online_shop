@@ -62,6 +62,10 @@ if($_GET["p"] == "produkterbaru"){
 	include "riwayat.php";
 }else if($_GET['p'] == "konfirmasi"){
 	include "konfirmasi.php";
+}else if($_GET['p'] == "selesaibelanja"){
+	include "selesaibelanja.php";
+}else if($_GET['p'] == "selesaibelanjaaksi"){
+	include "selesaibelanjaaksi.php";
 }else{
 	include "home.php";
 	include "produkterbaru.php";
