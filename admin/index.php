@@ -9,9 +9,7 @@ include "koneksi.php";
 <link rel="stylesheet" href="style.css" type="text/css" />
 <title>Administrator sndonlineshop</title>
 <style type="text/css">
-<!--
-.style1 {color: #00CC99}
--->
+
 </style>
 </head>
 
