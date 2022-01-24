@@ -81,7 +81,7 @@
                         <table width='100%' border='0' cellpadding='5' cellspacing='5'>
                             <tr valign='top'>
                                 <td width='100px'>
-                                    <img src="$foto1" width='100px' alt="">
+                                    <img src="<?php echo $foto1;?>" width='100px' alt="">
                                 </td>
                                 <td>
                                     <big><?php echo $rp['nama'];?></big><p>
