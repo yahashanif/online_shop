@@ -32,12 +32,14 @@
             ?>
             <div class="kepalacard">Terima Kasih</div>
             <div class="isicard" style="text-align:left;">
-                <p>No. Order : <big><b>#<?php echo "$tgl$bln$thn$jam$mnt$dtk"; ?></b></big></p><br>
+                <p>No. Order : <big><b>#<?php echo "$tgl$bln$thn$jam$mnt$dtk"; ?></b></big></p>
+                <hr><br>
                 Nama <br><big><b><?php echo $_POST['nama'];?></b></big><br>
                 Email <br><big><b><?php echo $_POST['email'];?></b></big><br>
                 No. Handphone <br><big><b><?php echo $_POST['nohp'];?></b></big><br>
                 Alamat <br><big><b><?php echo $_POST['alamat'];?></b></big><br>
                 Alamat Pengiriman<br><big><b><?php echo $_POST['alamatkirim'];?></b></big>
+                <hr>
             </div>
 
         <?php
@@ -91,6 +93,7 @@
                             </tr>
                         </table>
                     </div>
+                    <hr>
                     <div class="kepalacard">
                         Subtotal : IDR <?php echo $st; ?>
                     </div>

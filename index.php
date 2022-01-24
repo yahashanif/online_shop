@@ -31,10 +31,10 @@
 <div class="container3">
 	<div class="grid">
 		<div class="dh12">
-			<form method="post" action="<?php echo "?p=produkterbaru"; ?>">
+			<!-- <form method="post" action="<?php echo "?p=produkterbaru"; ?>">
 			<input name="cari" type="text" placeholder="Ketik Nama Produk Yang Akan Dicari" />
 			<input type="submit" name="Submit" value="Cari" />
-			</form>
+			</form> -->
 			</div>
 		</div>
 	</div>	
