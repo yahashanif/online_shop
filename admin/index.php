@@ -10,7 +10,7 @@ include "koneksi.php";
 <title>Administrator sndonlineshop</title>
 <style type="text/css">
 .container1{
-    background-color:#b39800;
+    background-color:#78909c;
     height:40px;
     width:100%;
     color:#FFFFFF;
@@ -24,7 +24,7 @@ include "koneksi.php";
 }
 .kepalacard{
     padding:10px;
-    background-color:#b39800;
+    background-color:#78909c;
     color:#FFFFFF;
     font-family:Century Gothic;
     family-size:20px;
@@ -45,7 +45,7 @@ body{
     position:relativ;
     display:block;
     background-color:#FFFFFF;
-    box-shadow:0 0 5px #b39800;
+    box-shadow:0 0 5px #78909c;
     text-align:center;
 }
 
@@ -57,14 +57,14 @@ body{
 
 #signin h3{
     text-align:center;
-    color:#b39800;
+    color:#78909c;
     font-size:24px;
     padding-top:60px;
 }
 
 #signin p{
     text-align:center;
-    color:#b39800;
+    color:#78909c;
     font-size:14px;
 }
 
@@ -81,11 +81,11 @@ textarea{
     width:90%;
     padding:0.8em;
     margin-top:1em;
-    border:1px solid #b39800;
+    border:1px solid #78909c;
     background-color:#FFFFFF;
     font-family:Cambria;
     font-size:14px;
-    color:#b39800;
+    color:#78909c;
     text-align:center;
     border-radius:5px;
 }
@@ -94,10 +94,10 @@ input [type="submit"]{
     width:auto;
     margin-top:0.9em;
 	color:#FFFFFF;
-    background-color:#b39800;
+    background-color:#78909c;
     padding:0.8em;
     cursor:pointer;
-    border:1px solid #b39800;
+    border:1px solid #78909c;
     font-family:Cambria;
     border-radius:5px;
     }
@@ -143,7 +143,7 @@ input [type="submit"]{
     z-index:1;
     top:0;
     left:0;
-    background-color:#b39800;
+    background-color:#78909c;
     overflow-x:hidden;
     padding-top:60px;
     text-align:center;
@@ -220,7 +220,7 @@ input [type="submit"]{
 }
 
 .container3{
-    background-color:#b39800;
+    background-color:#78909c;
     height:20px;
     width:100%;
     color:#FFFFFF;
@@ -239,7 +239,7 @@ input [type="submit"]{
     margin:0px auto;
     position:relative;
     display:block;
-    background-color:#b39800;
+    background-color:#78909c;
     border-radius:5px;
 }
 
@@ -262,7 +262,7 @@ input [type="submit"]{
 }
 
 /*link*/
-a{ color:#b39800; text-decoration:none; }
+a{ color:#78909c; text-decoration:none; }
 a:hover{ color:#87C2C2; }
 
 /*Tombol*/
@@ -279,7 +279,7 @@ a:hover{ color:#87C2C2; }
 
 .btn-add{
     color:#FFFFFF;
-    background-color:#b39800;
+    background-color:#78909c;
 	cursor:pointer;
 }
 
@@ -302,7 +302,7 @@ table{
 th{
     text-align:center;
     padding:10px;
-    background-color:#b39800;
+    background-color:#78909c;
     color:#FFFFFF;
     font-family:Cambria;
     font-size:14px;
@@ -312,7 +312,7 @@ td{
     padding:10px;
     background-color:#FFFFFF;
     font-size:14px;
-    color:#b39800;
+    color:#78909c;
     vertical-align:top;
 }
 
@@ -344,7 +344,7 @@ hr{
     padding-left:10px;
     padding-right:10px;
     background-color:#FFFFFF;
-    color:#b39800;
+    color:#78909c;
     min-height:185px;
     font-size:14px;
 }
@@ -353,11 +353,11 @@ hr{
     width:100px;
     padding:0.8em;
     margin-top:1em;
-    border:1px solid #b39800;
+    border:1px solid #78909c;
     Background-color:#FFFFFF;
     font-family:Cambria;
     font-size:14px;
-    color:#b39800;
+    color:#78909c;
     text-align:center;
     border-radius:5px;
 }
@@ -372,7 +372,7 @@ hr{
     height:23px;
     border-radius:7px;
     float:right;
-    background-color:#b39800;
+    background-color:#78909c;
     color:#FFFFFF;
     text-align:center;
     font-weight:bold;
@@ -388,14 +388,14 @@ hr{
     padding-left:10px;
     padding-right:10px;
     background-color:#FFFFFF;
-    color:#b39800;
+    color:#78909c;
     text-align:right;
     min-height:50px;
 }
 
 .kotak{
-    border:1px solid #b39800;
-    color:#b39800;
+    border:1px solid #78909c;
+    color:#78909c;
     padding:4px 10px 5px;
     font-size:14px;
     margin:0 0px 0 0;
@@ -403,8 +403,8 @@ hr{
 }
 
 .kotak:hover{
-    background-color:#b39800;
-    border:1px solid #b39800;
+    background-color:#78909c;
+    border:1px solid #78909c;
     color:#FFFFFF;
     padding:4px 10px 5px;
     font-size:14px;
