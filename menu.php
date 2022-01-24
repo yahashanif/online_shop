@@ -22,7 +22,7 @@
 			<?php
 			if(!empty($_SESSION["userag"]) and !empty($_SESSION["passag"])){
 				echo "<a><b>$_SESSION[userag]</b></a>";
-				echo "<a href='?p=konfirmasi&idag=$rag[idanggota]'>Konfirmasi</a>";
+				echo "<a href='?p=konfirmasi&idag=$_SESSION[idanggota]'>Konfirmasi</a>";
 				echo "<a href='?p=riwayat&idag=$rag[idanggota]'>Riwayat</a>";
 				echo "<a href='?p=keranjangbelanja&idag=$rag[idanggota]'>Keranjang</a>";
 				echo "<a href='?p=logout'>Logout</a>";

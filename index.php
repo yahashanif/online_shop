@@ -60,6 +60,8 @@ if($_GET["p"] == "produkterbaru"){
 	include "logout.php";
 }else if($_GET['p'] == "riwayat"){
 	include "riwayat.php";
+}else if($_GET['p'] == "konfirmasi"){
+	include "konfirmasi.php";
 }else{
 	include "home.php";
 	include "produkterbaru.php";
