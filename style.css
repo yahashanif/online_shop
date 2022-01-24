@@ -129,7 +129,7 @@ textarea{
     width:90%;
     padding:0.8em;
     margin-top:1em;
-    border:1px solid #b39800;
+    border:1px solid #000000;
     background-color:#FFFFFF;
     font-family:Cambria;
     font-size:14px;
@@ -238,7 +238,7 @@ input [type="submit"]{
 
 
 /*link*/
-a{ color:#b39800; text-decoration:none; }
+a{ color:#000000; text-decoration:none; }
 a:hover{ color:#87C2C2; }
 
 
