@@ -170,19 +170,7 @@ input [type="submit"]{
     .sidenav a{ font-size:18px; }
 }
 
-.container1{
-    background-color:#b39800;
-    height:40px;
-    width:100%;
-    color:#FFFFFF;
-    font-family:Cambria;
-    font-size:20px;
-    padding-left:20px;
-    padding-top:20px;
-    padding-bottom:10px;
-    position:fixed;
-    z-index:1;
-}
+
 
 .container1 a{ color:#FFFFFF; text-decoration:none; }
 .container1 a:hover{ color:#87C2C2; }
@@ -198,7 +186,6 @@ input [type="submit"]{
 .container2 h2{
     font-family:Century Gothic;
     font-size:24px;
-    font-width:normal;
 }
 
 .container3{
@@ -320,13 +307,7 @@ hr{
     padding-bottom:10px;
 }
 
-.kepalacard{
-    padding:10px;
-    background-color:#b39800;
-    color:#FFFFFF;
-    font-family:Century Gothic;
-    family-size:20px;
-}
+
 
 .isicard{
     padding-left:10px;
