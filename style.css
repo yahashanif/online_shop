@@ -33,7 +33,7 @@ body{
 	width:80%;
 	font-family:Cambria;
 	font-size:14px;
-	color:#b39800;
+	color:#000000;
 	padding:0.9em;
 	border:solid 1px #400080;
 	border-radius:5px;
@@ -70,6 +70,7 @@ body{
 	font-family:Centuri Gothic;
 	text-decoration:underline;
 	font-size:30px;
+    color: #000000;
 	font-weight:normal;
 	}
 	
