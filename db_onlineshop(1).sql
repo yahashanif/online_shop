@@ -15,7 +15,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `admin` (`idadmin`, `username`, `password`, `namalengkap`) VALUES
-(1,	'admin',	'admin',	'admin sndonlineshop');
+(1,	'admin',	'admin',	'Admin SND STORE');
 
 DROP TABLE IF EXISTS `anggota`;
 CREATE TABLE `anggota` (
@@ -33,10 +33,7 @@ CREATE TABLE `anggota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `anggota` (`idanggota`, `email`, `password`, `nama`, `jk`, `tgllahir`, `alamat`, `nohp`, `foto`, `tgldaftar`) VALUES
-(1,	'sandymulyanda03@gmail.com',	'12345',	'sandy mulyanda',	'L',	'0000-00-00',	'lubuk buaya ,padang ',	'082173056084',	'IMG_9581.JPG',	'2022-01-11 12:07:25'),
-(3,	'sandymulyanda03@gmail.com',	'12345',	'sandy mulyanda',	'L',	'1999-05-05',	'lubuk buaya ,padang ',	'082173056084',	'IMG_9581.JPG',	'2022-01-11 12:07:25'),
-(4,	'sandymulyanda03@gmail.com',	'12345',	'sandy mulyanda',	'L',	'1999-05-05',	'lubuk buaya ,padang ',	'082173056084',	'IMG_9581.JPG',	'2022-01-11 12:07:25'),
-(5,	'sandymulyanda03@gmail.com',	'12345',	'sandy mulyanda',	'L',	'1999-05-05',	'lubuk buaya ,padang ',	'082173056084',	'IMG_9581.JPG',	'2022-01-11 12:07:25');
+(1,	'sandymulyanda03@gmail.com',	'12345',	'sandy mulyanda',	'L',	'0000-00-00',	'lubuk buaya ,padang ',	'082173056084',	'IMG_9581.JPG',	'2022-01-11 12:07:25');
 
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
@@ -48,8 +45,6 @@ CREATE TABLE `cart` (
   PRIMARY KEY (`idcart`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `cart` (`idcart`, `idproduk`, `idanggota`, `jumlahbeli`, `tglcart`) VALUES
-(12,	21,	1,	1,	'2022-01-23 17:40:33');
 
 DROP TABLE IF EXISTS `jasakirim`;
 CREATE TABLE `jasakirim` (
@@ -78,22 +73,21 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `kategori` (`idcat`, `idadmin`, `namakat`, `ketkat`, `tglkat`) VALUES
-(1,	1,	'notebook',	'semua yang berhubungan dengan notebook',	'2021-12-02 10:37:11'),
-(2,	1,	'printer',	'semua yang berhubungan dengan merk printer tersedia disini',	'2021-12-07 10:44:19'),
-(3,	1,	'laptop',	'semua yang berhubungan dengan merk laptop tersedia disini',	'2021-12-07 10:44:57'),
-(4,	1,	'handphone',	'semua yang berhubungan dengan Handphone printer tersedia disini',	'2021-12-07 10:49:23');
+(8,	1,	'Converse Shoes',	'Semua Converse Shoes Tersedia Disini',	'2022-01-24 17:45:33'),
+(9,	1,	'Casual Shoes',	'Semua Casual Shoes Tersedia Disini',	'2022-01-24 17:46:26'),
+(10,	1,	'Running Shoes',	'Semua Running Shoes Tersedia Disini',	'2022-01-24 17:49:54');
 
 DROP TABLE IF EXISTS `orderdetail`;
 CREATE TABLE `orderdetail` (
-  `idorder` int NOT NULL,
+  `idorder` double NOT NULL,
   `idproduk` int NOT NULL,
   `idjasa` int NOT NULL,
   `jumlahbeli` int NOT NULL,
   `subtotal` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `orderdetail` (`idorder`, `idproduk`, `idjasa`, `jumlahbeli`, `subtotal`) VALUES
-(1,	21,	1,	2,	2);
+
+SET NAMES utf8mb4;
 
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
@@ -101,16 +95,12 @@ CREATE TABLE `orders` (
   `noorder` double NOT NULL,
   `idanggota` int NOT NULL,
   `alamatkirim` text NOT NULL,
-  `total` double NOT NULL,
-  `tglorder` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `total` double DEFAULT NULL,
+  `tglorder` datetime NOT NULL,
   `statusorder` varchar(20) NOT NULL,
   PRIMARY KEY (`idorder`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO `orders` (`idorder`, `noorder`, `idanggota`, `alamatkirim`, `total`, `tglorder`, `statusorder`) VALUES
-(1,	21,	1,	'sdfdsfsss',	2,	'2022-01-23 16:01:23',	'Baru');
-
-SET NAMES utf8mb4;
 
 DROP TABLE IF EXISTS `pembayaran`;
 CREATE TABLE `pembayaran` (
@@ -125,8 +115,6 @@ CREATE TABLE `pembayaran` (
   PRIMARY KEY (`idbayar`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO `pembayaran` (`idbayar`, `idorder`, `namabankpengirim`, `namapengirim`, `jumlahtranfer`, `tgltranfer`, `namabankpenerima`, `bukti`) VALUES
-(2,	1,	'223',	'22',	22222,	'2022-01-24',	'sdfdf',	'Screenshot from 2021-12-30 10-47-30.png');
 
 DROP TABLE IF EXISTS `produk`;
 CREATE TABLE `produk` (
@@ -147,10 +135,5 @@ CREATE TABLE `produk` (
   PRIMARY KEY (`idproduk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `produk` (`idproduk`, `idkat`, `idadmin`, `nama`, `harga`, `stok`, `spesifikasi`, `detail`, `diskon`, `berat`, `isikotak`, `foto1`, `foto2`, `tglproduk`) VALUES
-(20,	3,	1,	'23',	234,	0,	'234234\"\"',	'234234',	5,	0,	'0',	'Screenshot from 2021-12-17 13-12-38.png',	'Screenshot from 2021-12-30 10-47-30.png',	'2022-01-23 16:46:57'),
-(21,	3,	1,	'asdasdasd',	234,	5,	'234234\"',	'234234',	2342342,	23423,	'234324',	'Screenshot from 2021-12-17 13-12-38.png',	'Screenshot from 2021-12-30 10-47-30.png',	'2022-01-23 16:46:57'),
-(22,	3,	1,	'23',	234,	2342,	'234234',	'234234',	2342342,	23423,	'234324',	'Screenshot from 2021-12-17 13-12-38.png',	'Screenshot from 2021-12-30 10-47-30.png',	'2022-01-23 16:46:57'),
-(23,	3,	1,	'23',	234,	2342,	'234234',	'234234',	2342342,	23423,	'234324',	'Screenshot from 2021-12-17 13-12-38.png',	'Screenshot from 2021-12-30 10-47-30.png',	'2022-01-23 16:46:57');
 
--- 2022-01-24 07:50:06
+-- 2022-01-24 11:15:56

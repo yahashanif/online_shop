@@ -426,7 +426,7 @@ username='$_SESSION[useradm]' and password='$_SESSION[passadm]'");
 		<div class="container1">
 		<span style="font-size:20px; cursor:pointer; padding-right:15px;"
 onclick="openNav()">&#9776;</span>
-		<a href="<?php echo "?p=home"; ?>" class="style1">Snd Onlineshop Admin</a>		
+		<a href="<?php echo "?p=home"; ?>" class="style1">SND STORE</a>		
 		</div>
 	</div>
 </div>
