@@ -74,7 +74,6 @@
             }else{
                 $foto1 = "fotoproduk/avatar.png";
             }
-            echo $foto1;
             ?>
             <div class="dh6">
                 <div class="card">
@@ -101,7 +100,8 @@
             <?php
             // simpan data orderdetail
             mysqli_query($kon,"INSERT INTO `orderdetail` (`idorder`, `idproduk`, `idjasa`, `jumlahbeli`, `subtotal`)
-            VALUES ('$idorder', '$rc[idproduk]', '$_POST[idjasa]', '$jumlahbeli', '$subtotal');");
+            VALUES ('$idorderbantu', '$rc[idproduk]', '$_POST[idjasa]', '$jumlahbeli', '$subtotal')");
+          
         }
 
         $sqlj = mysqli_query($kon,"select * from jasakirim where idjasa='$_POST[idjasa]'");
